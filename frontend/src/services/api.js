@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'https://hms-vsku.onrender.com';
+const API_BASE = 'https://hms-1-7umx.onrender.com';
 
 const api = axios.create({
   baseURL: API_BASE,
