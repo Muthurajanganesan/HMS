@@ -65,7 +65,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:3001", "https://hms-two-gamma.vercel.app", "https://hms-vsku.onrender.com"));
+        configuration.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:3001", "https://hms-two-gamma.vercel.app"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "X-Requested-With", "X-XSRF-TOKEN"));
         configuration.setExposedHeaders(Arrays.asList("Authorization", "X-Token-Expired"));
