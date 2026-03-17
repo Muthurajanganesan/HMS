@@ -155,24 +155,28 @@ public class AppointmentService {
         return toResponse(appointment);
     }
 
+    @Transactional(readOnly = true)
     public List<AppointmentResponse> getPatientAppointments(Long patientId) {
         return appointmentRepository.findByPatientId(patientId).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public List<AppointmentResponse> getDoctorAppointments(Long doctorId) {
         return appointmentRepository.findByDoctorId(doctorId).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public List<AppointmentResponse> getDoctorAppointmentsByDate(Long doctorId, LocalDate date) {
         return appointmentRepository.findByDoctorIdAndAppointmentDate(doctorId, date).stream()
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
     public List<AppointmentResponse> getAllAppointments() {
         return appointmentRepository.findAll().stream()
                 .map(this::toResponse)

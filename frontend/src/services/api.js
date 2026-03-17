@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:8080/api';
+const API_BASE = 'https://hms-vsku.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE,
@@ -61,13 +61,18 @@ api.interceptors.response.use(
 
       // Handle 403 Forbidden — insufficient permissions
       if (status === 403) {
-        console.error('Access denied: Insufficient permissions');
+        console.error('Access denied: Insufficient permissions. Check if your role is correct or try logging out and back in.');
       }
+      console.error(`API Error [${status}]:`, error.response.data);
+    } else {
+      console.error('Network Error or No Response:', error.message);
     }
 
     return Promise.reject(error);
   }
 );
+
+console.log('API Base URL:', API_BASE);
 
 // ====== AUTH ======
 export const authAPI = {
