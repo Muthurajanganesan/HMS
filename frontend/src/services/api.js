@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const API_BASE = 'https://hms-1-7umx.onrender.com';
+const API_BASE = 'https://hms-1-7umx.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE,
   headers: { 'Content-Type': 'application/json' },
-  timeout: 15000, // 15 second timeout
+  timeout: 60000, // 60 second timeout for Render cold starts
 });
 
 // Attach JWT token from sessionStorage to every request
