@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/patient")
-@CrossOrigin(origins = "http://localhost:3000")
+
 public class PatientController {
 
     private final AppointmentService appointmentService;

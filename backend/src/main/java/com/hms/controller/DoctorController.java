@@ -15,7 +15,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/doctor")
-@CrossOrigin(origins = "http://localhost:3000")
+
 public class DoctorController {
 
     private final AppointmentService appointmentService;
